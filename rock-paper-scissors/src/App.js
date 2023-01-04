@@ -29,13 +29,15 @@ function App() {
   const play = (userChoice) => {
     setUserSelect(choice[userChoice])
     let computerChoice = randomChoice()
+    setComputerSelect(computerChoice)
   }
 
   const randomChoice=()=>{
     let itemArray = Object.keys(choice) //객체에 키값만 뽑아서 어래이로 만들어주는 함수.
     console.log('item array',itemArray)
-    let randomItem = Math.random()
-    console.log('random value',randomItem)
+    let randomItem = Math.floor(Math.random()*itemArray.length); //floor 소수점 버리기
+    let final = itemArray[randomItem]
+    return choice[final]
   }
   return (
   <div>  
