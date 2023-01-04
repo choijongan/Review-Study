@@ -1,5 +1,6 @@
 import './App.css';
 import Box from './component/Box';
+import { useState } from 'react';
 
 //1. 박스 2개 (타이틀, 사진, 결과)
 //2. 가위 바위 보 버튼
@@ -19,18 +20,19 @@ const choice = {
   },
   paper:{
     name:'Paper',
-    img:'https://mblogthumb-phinf.pstatic.net/20151004_78/shdudtn1234_1443897618525T4jeq_JPEG/%B0%A1%C0%A7%B9%D9%C0%A7%BA%B8_%C0%CC%B1%E2%B4%C2%B9%FD%B0%FA_%C0%DF%C7%CF%B4%C2%B9%FD_%BD%C5%C0%C7_%C7%D1%BC%F6%B8%A6_%B9%E8%BF%F6%BA%B8%C0%DA.jpg?type=w2'
+    img:'https://korearps.kr/wp-content/uploads/sites/75/2020/03/slider-pic-102.png'
   }
 }
 function App() {
+  let [userSelect, setUserSelect] = useState(null)
   const play = (userChoice) => {
-    console.log('선택됨!',userChoice)
+    setUserSelect(choice[userChoice]) 
   }
   return (
   <div>  
     <div className='main'>
-      <Box title='You'/>
-      <Box title='Computer'/>
+      <Box title='You' item={userSelect}/>
+      {/* <Box title='Computer'/> */}
     </div> 
     <div className='main'>
       <button onClick={() => play('scissors')}>가위</button> 
