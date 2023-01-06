@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 
 //1. 앱이 실행되자마자 현재위치기반의 날씨가 보임
@@ -6,7 +7,18 @@ import './App.css';
 //4. 도시버튼을 클릭할때 마다 도시별 날씨가 나온다.
 //5. 현재위치 버튼을 누르면 다시 현재위치 기반 날씨 표시
 //6. 데이터를 들고온느 동안 로딩 스피너가 돈다.
+
 function App() {
+  const getCurrentLocation = () => {
+    navigator.geolocation.getCurrentPosition((position)=>{
+      let lat = position.coords.latitude
+      let lon = position.coords.longitude
+      console.log('현재위치',lat, lon)
+    });
+  }
+  useEffect(()=>{
+    getCurrentLocation()
+  },[])
   return (
     <div >
      
