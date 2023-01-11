@@ -12,6 +12,8 @@ import WeatherButton from './component/WeatherButton';
 //6. 데이터를 들고온느 동안 로딩 스피너가 돈다.
 
 function App() {
+
+  const [weather, setWeather]=useState(null);
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position)=>{
       let lat = position.coords.latitude
@@ -21,10 +23,10 @@ function App() {
   }
 
   const getWeatherByCurrentLocation = async(lat,lon) => {
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7b3ce9c967ff0e9fe57fbdf8463c6ee9`
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7b3ce9c967ff0e9fe57fbdf8463c6ee9&units=metric`
     let response = await fetch(url)
     let data = await response.json()
-    console.log('data',data)
+    setWeather(data)
   }
 
   useEffect(()=>{
@@ -33,7 +35,7 @@ function App() {
   return (
     <div>
       <div className='container'>
-        <WeatherBox />
+        <WeatherBox weather={weather}/>
         <WeatherButton />
       </div>
     </div>
