@@ -14,6 +14,7 @@ import WeatherButton from './component/WeatherButton';
 function App() {
 
   const [weather, setWeather]=useState(null);
+  const [city, setCity]=useState('')
   const cities=['paris','new york','tokyo','seoul'] //다른 곳에서 쓰일 정보는 따로 모아서 관리해주면 좋다.
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position)=>{
@@ -33,11 +34,15 @@ function App() {
   useEffect(()=>{
     getCurrentLocation()
   },[])
+
+  useEffect(()=>{
+    console.log('city?',city)
+  },[city])
   return (
     <div>
       <div className='container'>
         <WeatherBox weather={weather}/>
-        <WeatherButton cities={cities}/>
+        <WeatherButton cities={cities} setCity={setCity}/>
       </div>
     </div>
   );
