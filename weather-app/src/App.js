@@ -52,6 +52,14 @@ function App() {
     }
   },[city])
 
+  const myCity = (city) => {
+    if (city === 'current') {
+      setCity(null)
+    } else {
+      setCity(city)
+    }
+  }
+
 
 
   return (
@@ -68,7 +76,7 @@ function App() {
       ):( 
       <div className='container'>
         <WeatherBox weather={weather}/>
-        <WeatherButton cities={cities} setCity={setCity}/>
+        <WeatherButton cities={cities} myCity={myCity} setCity={setCity}/>
       </div>
       )}
     </div>
