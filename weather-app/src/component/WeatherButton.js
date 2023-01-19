@@ -13,8 +13,8 @@ const WeatherButton = ({cities,setCity, myCity}) => {
           key={index} 
           onClick={()=>setCity(item)}>{item}</Button>
         ))}
-    </div>;
+    </div>
   )
-}
+};
 
 export default WeatherButton
