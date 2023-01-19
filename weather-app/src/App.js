@@ -51,7 +51,7 @@ function App() {
        getWeatherByCity();
     }
   },[city])
-
+    
   const myCity = (city) => {
     if (city === 'current') {
       setCity(null)
@@ -59,8 +59,6 @@ function App() {
       setCity(city)
     }
   }
-
-
 
   return (
     <div>
