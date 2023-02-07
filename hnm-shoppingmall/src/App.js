@@ -5,6 +5,7 @@ import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 
 //1. 전체상품페이지, 로그인, 상품상세페이지
 //1-1. 네비게이션 바
@@ -18,6 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //7. 상품을 검색할 수 있다. 
 //navbar는 전체 페이지에 고정이므로 라우터밖에 만들어준다.
 function App() {
+  const[authenticate,setAuthecticate]=useState(false) //false 비로그인, true 로그인
   return (
     <div>
       <Navbar/>
