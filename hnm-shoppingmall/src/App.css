@@ -4,6 +4,10 @@
     margin: 20px;
 }
 
+.login-button2{
+    cursor: pointer;
+}
+
 .nav-section{
     display: flex;
     justify-content: center;
