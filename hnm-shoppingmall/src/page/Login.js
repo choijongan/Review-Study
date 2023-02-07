@@ -26,7 +26,7 @@ const Login = () => {
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <Button variant="danger" type="submit">
+      <Button variant="danger" type="submit" className='button'>
         로그인
       </Button>
     </Form>
