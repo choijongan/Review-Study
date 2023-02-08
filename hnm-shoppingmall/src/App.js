@@ -19,7 +19,7 @@ import { useEffect, useState } from 'react';
 //7. 상품을 검색할 수 있다. 
 //navbar는 전체 페이지에 고정이므로 라우터밖에 만들어준다.
 function App() {
-  const[authenticate,setAuthecticate]=useState(false) //false 비로그인, true 로그인
+  const[authenticate,setAuthenticate]=useState(false) //false 비로그인, true 로그인
   useEffect(()=>{
     console.log('aaaaa',authenticate)
   },[authenticate])
@@ -28,11 +28,11 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<ProductAll/>} />
-        <Route path="/login" element={<Login setAuthecticate={setAuthecticate}/>} /> 
+        <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>} /> 
         <Route path="/product/:id" element={<ProductDetail/>} />
       </Routes>
     </div>
-    //login에서 setAuthecticate를 프롭스로 보내주면 로그인 할 때 true,false 변경가능
+    //login에서 setAuthenticate 프롭스로 보내주면 로그인 할 때 true,false 변경가능
   );
 }
 

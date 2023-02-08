@@ -4,13 +4,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({setAuthecticate}) => {
-  const navaigate = useNavigate()
+const Login = ({setAuthenticate}) => {
+  const navigate = useNavigate()
   const loginUser = (event) =>{
     event.preventDefault();
     console.log('lgoin user function issue')
-    setAuthecticate(true);
-    navaigate('/');
+    setAuthenticate(true);
+    navigate('/');
   }
   return (
     <Container>
