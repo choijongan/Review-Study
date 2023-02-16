@@ -7,7 +7,7 @@ const ProductAll = () => {
     const [productList, setProductList] = useState([]) //UI에 데이터를 보여준다
     const [query, setQuery] = useSearchParams()
     const getProducts = async()=>{ //await은 async를 줘야한다.
-      let searchQuery=query.get('q') || '';
+      let searchQuery=query.get('q') || ''; //q쿼리값이 없으면 디폴트(아무값도 없다)줌.
       console.log('쿼리값은?',searchQuery)
       let url= `http://localhost:5000/products?q=${searchQuery}`;
       let response = await fetch(url); 
