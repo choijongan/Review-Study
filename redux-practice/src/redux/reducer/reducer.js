@@ -10,6 +10,14 @@ function reducer(state=initialState, action){
     if(action.type==="INCREMENT") {
         return {...state, count: state.count + 1 } //...state치고 뒤에 바꾸고 싶은 내용
     }
+    switch(action.type){ //if써도 되고, switch문 써도됨. 회사마다 쓰는걸로 쓰면됨.
+        case "INCREMENT":
+            return {...state, count: state.count + 1 }
+            default: 
+            return {...state}
+    }
+
+    return {...state} //if문 말고 기본 return도 필요
 }
 
 export default reducer
