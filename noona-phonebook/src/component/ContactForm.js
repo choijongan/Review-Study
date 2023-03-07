@@ -5,10 +5,10 @@ import Form from 'react-bootstrap/Form';
 const ContactForm = () => {
   const [name,setName]=useState('')
   const [phoneNumber,setPhoneNumber]=useState(0)
-  // const getName=(event)=>{ 모든 event 핸들러는 event라는 매개변수를 넘긴다.
-  // setName(event.target.value) form에 있는 정보를 받아볼 수 있다.
-  // 밑에 getName하나 때문에 const가 많아져서 함수 만들어 주지 않고 그 자리에 함수를 만들어버림.
-  // onChange={} event 타입할 때마다 타입한 값을 읽어와서 저장해줌.(ex:onChange={getName})
+  // const getName=(event)=>{setName(event.target.value)} 모든 event 핸들러는 event라는 매개변수를 넘긴다.
+  //                        event.target.value로 form에 있는 정보를 받아볼 수 있다.
+  // onChange쪽 getName하나 때문에 const가 많아져서 함수 만들어 주지 않고 그 자리에 함수(setName)을 바로 줘버림.
+  // onChange={}라는 event는 입력할 때마다 타입한 값을 읽어와서 저장해줌.(ex:onChange={getName})
   
   return (
     <div>
