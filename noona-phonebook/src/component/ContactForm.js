@@ -11,11 +11,13 @@ const ContactForm = () => {
   // onChange쪽 getName하나 때문에 const가 많아져서 함수 만들어 주지 않고 그 자리에 함수(setName)을 바로 줘버림.
   // onChange={}라는 event는 입력할 때마다 타입한 값을 읽어와서 저장해줌.(ex:onChange={getName})
   const dispatch = useDispatch() //useDispatch는 action을 던져준다.
-  const addContact=(event)=>{
-      event.preventDefault() //계속 리프레쉬 되는걸 막습니다. 
-      dispatch({type:'ADD_CONTATCT' , payload:{name, phoneNumber}}) //던져지는 action은 항상 type과 payload 키를 가지고 있다.
-                                                //payload:{name:name, phoneNumber:phoneNumber} 이름과 키값이 같다면 하나로 줄여도 된다.          
-    }                                                       
+  const addContact = (event) => {
+      event.preventDefault(); //계속 리프레쉬 되는걸 막습니다. 
+      dispatch({type:'ADD_CONTACT', payload:{name, phoneNumber}}) //던져지는 action은 항상 type과 payload 키를 가지고 있다.
+      //입력안되는 현상 dispatch 다시 쓰니까 해결됨.
+      setName("");
+      setPhoneNumber("");                                         //payload:{name:name, phoneNumber:phoneNumber} 이름과 키값이 같다면 하나로 줄여도 된다.          
+    };                                                       
 
   return (
     //Form은 onclick을 하면 안되고, onSubmit으로 줘야한다.
