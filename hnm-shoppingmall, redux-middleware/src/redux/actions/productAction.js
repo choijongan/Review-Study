@@ -3,8 +3,8 @@ function getProducts(searchQuery){ //미들웨어함수는 함수를 리턴한�
         let url= `http://localhost:5000/products?q=${searchQuery}`;
         let response = await fetch(url); 
         let data = await response.json();
-        console.log(data)
+        dispatch({type:'GET_PRODUCT_SUCCESS', payload:{data}});
     }
 }
 
-export const productAction={getProducts}
+export const productAction={getProducts};
