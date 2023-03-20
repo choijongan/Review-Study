@@ -7,4 +7,4 @@ function getProducts(searchQuery){ //미들웨어함수는 함수를 리턴한�
     }
 }
 
-export const productAction={getProducts};
+export const productAction={getProducts}; //함수가 여러개 될 수 있어서 객체에 담아서 리턴한다.

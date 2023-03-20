@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { productAction } from '../redux/actions/productAction';
 
 const ProductAll = () => {
-    const productList = useSelector((state)=>state.productList);
+    const productList = useSelector((state)=>state.product.productList); //세부적이게 작성해야됨. product안에 있는 리스트를 주세요.
     const [query, setQuery] = useSearchParams();
     const dispatch = useDispatch()
     const getProducts = ()=>{ //await은 async를 줘야한다.
