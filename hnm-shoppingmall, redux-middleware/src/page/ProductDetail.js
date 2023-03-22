@@ -7,7 +7,8 @@ import { detailAction } from '../redux/actions/detailAction';
 
 const ProductDetail = () => {
   let{id} = useParams()
-  const product = useSelector(state=>state.detail.ProductDetail)  //api 데이터를 state에 담기
+  const product = useSelector(state=>state.detail.selectedItem)  //api 데이터를 state에 담기
+  //state.dateil에서 detail은 index.js에서 이름을 준 것.
   const dispatch = useDispatch()
   const getProductDetail = ()=>{
   console.log('아이디값은?', {id})
