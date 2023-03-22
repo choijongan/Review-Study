@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { detailAction } from '../redux/actions/detailAction';
 
 const ProductDetail = () => {
   let{id} = useParams()
-  const [product, setProduct] = useState(null) //api 데이터를 state에 담기
+  const product = useSelector(state=>state.ProductDetail)  //api 데이터를 state에 담기
   const dispatch = useDispatch()
   const getProductDetail = ()=>{
   console.log('아이디값은?', {id})
