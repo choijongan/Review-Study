@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useDispatch } from 'react-redux';
+import { detailAction } from '../redux/actions/detailAction';
 
 const ProductDetail = () => {
   let{id} = useParams()
   const [product, setProduct] = useState(null) //api 데이터를 state에 담기
-  const getProductDetail = async()=>{
-    let url=`http://localhost:5000/products/${id}`
-    let response = await fetch(url)
-    let data = await response.json()
-    console.log(data)
-    setProduct(data)
+  const dispatch = useDispatch()
+  const getProductDetail = ()=>{
+  console.log('아이디값은?', {id})
+  dispatch(detailAction.getProductDetail({id}))
   }
   useEffect(()=>{
     getProductDetail()
