@@ -1,5 +1,5 @@
-function getProductDetail({id}){
-    return async(dispatch,getState)=>{
+function getProductDetail(id){
+    return async(dispatch)=>{
         let url=`http://localhost:5000/products/${id}`
         let response = await fetch(url)
         let data = await response.json()

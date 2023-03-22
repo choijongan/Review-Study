@@ -1,5 +1,5 @@
 let initialState = {
-    product:[],
+    product:null,
 }
 
 function detailReducer(state = initialState, action) {

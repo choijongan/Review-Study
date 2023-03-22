@@ -7,11 +7,11 @@ import { detailAction } from '../redux/actions/detailAction';
 
 const ProductDetail = () => {
   let{id} = useParams()
-  const product = useSelector(state=>state.ProductDetail)  //api 데이터를 state에 담기
+  const product = useSelector(state=>state.detail.ProductDetail)  //api 데이터를 state에 담기
   const dispatch = useDispatch()
   const getProductDetail = ()=>{
   console.log('아이디값은?', {id})
-  dispatch(detailAction.getProductDetail({id}))
+  dispatch(detailAction.getProductDetail(id))
   }
   useEffect(()=>{
     getProductDetail()
