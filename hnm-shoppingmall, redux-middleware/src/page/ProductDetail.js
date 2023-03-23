@@ -11,7 +11,7 @@ const ProductDetail = () => {
   //state.dateil에서 detail은 index.js에서 이름을 준 것.
   const dispatch = useDispatch()
   const getProductDetail = ()=>{
-  console.log('아이디값은?', {id})
+  console.log('아이디값은?', id)
   dispatch(detailAction.getProductDetail(id))
   }
   useEffect(()=>{
