@@ -15,7 +15,7 @@ let initialState = {
 // }
 
 // export default productReducer
-createSlice({
+const productSlice = createSlice({  //createSlice가 반환하는 내용을 어디에 저장을 합시다!
     name:'product',
     initialState,
     reducers:{
@@ -28,3 +28,5 @@ createSlice({
            },
     },
 })
+
+console.log('aaaaaaa',productSlice)
