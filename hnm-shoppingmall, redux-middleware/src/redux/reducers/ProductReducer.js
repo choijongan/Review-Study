@@ -22,7 +22,7 @@ const productSlice = createSlice({  //createSlice가 반환하는 내용을 어�
         getAllproducts(state,action){
            state.productList = action.payload.data  
            //Slice가 알아서 return해주고, ...state해줌. 바꾸고 싶은 값만 멘션해주면 된다.
-           }, //추가 케이스를 더 만들어야 하는 경우 함수를 새로 추가하면 됨!
+           }, //추가 케이스를 더 만들어야 하는 경우 함수를 새로 추가하면 됨!!
         getSingleProduct(state,action){
             state.selectedItem = action.payload.data
            },
