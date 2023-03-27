@@ -9,5 +9,6 @@ let store = createStore(
     rootReducer, 
     composeWithDevTools(applyMiddleware(thunk))
     ) //임의로 두 reducer 합친 index이름을 rootReducer로 주고 store로 보낸다
+    //항상 combinereducer, thunk, applymiddleware, composewithdevtools를 써줘야 했음.
 
 export default store
