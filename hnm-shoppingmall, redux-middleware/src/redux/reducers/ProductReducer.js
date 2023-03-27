@@ -30,3 +30,5 @@ const productSlice = createSlice({  //createSlice가 반환하는 내용을 어�
 })
 
 console.log('aaaaaaa',productSlice)
+
+export default productSlice.reducer
