@@ -1,9 +1,12 @@
+import { productActions } from "../reducers/ProductReducer";
+
 function getProducts(searchQuery){ //미들웨어함수는 함수를 리턴한다.
     return async (dispatch, getState)=>{  //항상 2개의 매개변수가 있음!
         let url= `http://localhost:5000/products?q=${searchQuery}`;
         let response = await fetch(url); 
         let data = await response.json();
-        dispatch({type:'GET_PRODUCT_SUCCESS', payload:{data}});
+        // dispatch({type:'GET_PRODUCT_SUCCESS', payload:{data}});
+        dispatch(productActions.getAllproducts({data})) //알아서 payload아래로 들어감.
     }
 }
 
