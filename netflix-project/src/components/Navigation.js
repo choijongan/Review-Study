@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Form, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
 
-const Navigation = () => {
+const Navigation = () => { //네비게이션 메뉴
   return (
         <Navbar bg="dark" variant='dark' expand="lg">
           <Container fluid>
