@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Form, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => { //네비게이션 메뉴
   return (
@@ -15,8 +16,8 @@ const Navigation = () => { //네비게이션 메뉴
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Movies</Nav.Link>
+                <Link to='/' className='nav-item'>Home</Link>
+                <Link to='/Movies' className='nav-item'>Movies</Link>
               </Nav>
               <Form className="d-flex">
                 <Form.Control
