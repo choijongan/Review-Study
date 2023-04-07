@@ -4,7 +4,7 @@ const api = axios.create({
     baseURL:'https://api.themoviedb.org/3',
     headers:{'Content-Type':'application/json'}
 })
-
+//매번 api 호출할때 마다 consol.log 안해도 자동으로 나오게 하는 코드들
 api.interceptors.request.use(function (config) {
     // Do something before request is sent
     console.log('requset start', config)
