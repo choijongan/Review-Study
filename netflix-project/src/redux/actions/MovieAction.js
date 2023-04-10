@@ -1,8 +1,9 @@
 import api from "../api"
 
+const api_key=process.env.REACT_APP_API_KEY
 function getMovies(){
     return async(dispatch)=>{
-        const popularMovieApi =await api.get(`/movie/top_rated?api_key=<<api_key>>&language=en-US&page=1`)
+        const popularMovieApi =await api.get(`/movie/top_rated?api_key=${api_key}&language=en-US&page=1`)
 
         let url = `https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1`
         let response = await fetch(url)

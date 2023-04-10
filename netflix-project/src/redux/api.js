@@ -5,6 +5,7 @@ const api = axios.create({
     headers:{'Content-Type':'application/json'}
 })
 //매번 api 호출할때 마다 consol.log 안해도 자동으로 나오게 하는 코드들
+//axios는 항상 data라는 필드 안에 받은 응답을 넣어준다.
 api.interceptors.request.use(function (config) {
     // Do something before request is sent
     console.log('requset start', config)
