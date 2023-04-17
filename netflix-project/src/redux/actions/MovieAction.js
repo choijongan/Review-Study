@@ -15,10 +15,20 @@ function getMovies(){
             `/movie/upcoming?api_key=${api_key}&language=en-US&page=1`
         )
 
-        let [popularMovies, topRatedMovies, upcomingMovies] = await Promise.all([popularMovieApi,topRatedApi,upComingApi]) 
-        console.log(popularMovies)
-        console.log(topRatedMovies)
-        console.log(upcomingMovies)
+        let [popularMovies, topRatedMovies, upcomingMovies] = await Promise.all([
+            popularMovieApi,
+            topRatedApi,
+            upComingApi
+        ]);
+        dispatch({
+            type: "GET_MOVIES_SUCCESS",
+            payload: { 
+                popularMovies: popularMovies.data, 
+                topRatedMovies: topRatedMovies.data, 
+                upcomingMovies: upcomingMovies.data, 
+            },
+        }) 
+ 
         //부르고 싶은 api다 넣으면 됨(다 올때까지만 한번만 기다리고 동시에 불러달라.)
         //호출하는 api가 1개면 await, 다수면 promise.all
         //let [popularMovies, topRatedMovies, upcomingMovies] 배열형태로 넣어두면 Array 형태 말고 따로따로 받아서 볼 수 있다.       
