@@ -1,5 +1,14 @@
+body{
+  background-color: black !important;
+  color: white !important;
+}
+
 .nav-item{
   color: white;
   text-decoration: none;
   margin-right: 20px;
+}
+
+.banner{
+  height: 600px;
 }
