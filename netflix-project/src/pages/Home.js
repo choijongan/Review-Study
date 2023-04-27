@@ -3,6 +3,7 @@ import { movieaction } from '../redux/actions/MovieAction'
 import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components/Banner'
 import MovieSlide from '../components/MovieSlide'
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,17 @@ const Home = () => {
   useEffect(()=>{
     dispatch(movieaction.getMovies());
   },[]);
+
+  if(loading){ //만약에 loading이 true면 로딩스피너를 보여주고, false면 영화를 불러와라.
+    return <ClipLoader
+        color={color}
+        loading={loading}
+        cssOverride={override}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+  }
   return (
     <div>
       {popularMovies.results && <Banner movie={popularMovies.results[0]}/>}
