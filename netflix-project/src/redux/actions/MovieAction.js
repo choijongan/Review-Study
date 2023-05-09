@@ -47,8 +47,6 @@ function getMovies(){
             //에러 핸들링 하는곳
             dispatch({type: 'GET_MOVIES_FAILURE'})
         }
-        
-
     }
 }
 
