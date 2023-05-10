@@ -24,14 +24,11 @@ const responsive = {
   };
 
 const MovieSlide = ({ movies }) => {
-  return (
+  console.log('movies',movies)
+  return ( //map을 넣으면 array에 있는 아이템을 가져온다. 그 후 props로 item을 넣어준다.
     <div>
         <Carousel responsive={responsive}>
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
+           {movies.results.map(item=><MovieCard item={item}/>)}
         </Carousel>
     </div>
   )
