@@ -25,7 +25,7 @@ const responsive = {
 
 const MovieSlide = ({ movies }) => {
   console.log('movies',movies)
-  return ( //map을 넣으면 array에 있는 아이템을 가져온다. 그 후 props로 item을 넣어준다.
+  return ( //map을 넣으면 array에 있는 아이템을 가져온다. 그 후 props로 item을 넣어준다. 어래이타입은 .map
     <div>
         <Carousel responsive={responsive}>
            {movies.results.map(item=><MovieCard item={item}/>)}
