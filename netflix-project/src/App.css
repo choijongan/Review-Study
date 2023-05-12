@@ -33,6 +33,7 @@ body{
 .moviecard{
   width: 300px;
   height: 200px;
+  margin-bottom: 20px;
 }
 
 .overlay{
@@ -44,5 +45,9 @@ body{
 
 .moviecard:hover .overlay{
   opacity: 1;
+}
+
+.movieslide{
+  margin-bottom: 50px;
 }
 

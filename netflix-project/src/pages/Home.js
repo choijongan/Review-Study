@@ -30,7 +30,7 @@ const Home = () => {
       />
   }
   return (
-    <div>
+    <div className='movieslide'>
       <Banner movie={popularMovies.results[0]} />
       
       <h1>Popular Movie</h1>
