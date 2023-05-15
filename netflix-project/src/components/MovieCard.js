@@ -1,7 +1,9 @@
 import React from 'react'
 import { Badge } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 
 const MovieCard = ({ item }) => {
+    const { genreList } = useSelector(state=>state.movie)
   return (
     <div
     className='moviecard' //card라는 이름은 이미있어서 적용이 되지않는다.
