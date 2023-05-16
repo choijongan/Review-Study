@@ -13,7 +13,11 @@ const MovieCard = ({ item }) => {
     }}>
         <div className='overlay'>
           <h1>{item.title}</h1>
-          <div>{item.genre_ids.map((id)=><Badge bg="danger">{id}</Badge>)}</div>
+          <div>
+            {item.genre_ids.map((id)=>
+            <Badge bg="danger">{genreList.find((item) => item.id==id).name}</Badge>
+          )}
+          </div>
           <div>
             <span>{item.vote_average}</span>
             <span>{item.adult?'청소년 관람불가' : 'Under 18'}</span>
