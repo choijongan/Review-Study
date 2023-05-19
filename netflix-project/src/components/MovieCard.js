@@ -1,12 +1,17 @@
 import React from 'react'
 import { Badge } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ item }) => {
+    const navigate = useNavigate();
     const { genreList } = useSelector(state=>state.movie)
+    const showDetail = () => {
+      navigate('/MovieDetail')
+    }
   return (
     <div
-    className='moviecard' //card라는 이름은 이미있어서 적용이 되지않는다.
+    className='moviecard' onClick={showDetail}//card라는 이름은 이미있어서 적용이 되지않는다.
     style={{
       backgroundImage:
       "url("+`https://www.themoviedb.org/t/p/w355_and_h200_multi_faces${item.poster_path}`+")"
