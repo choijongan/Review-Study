@@ -1,11 +1,15 @@
-import { useState } from 'react';
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 function App() {
-  const [count,setCount] = useState(0)
+  const count = useSelector(state=>state.count)  
 
-  const increase=()=>{
-    setCount(count+1)
+  const dispatch = useDispatch()
+
+  const increase = () => {
+    dispatch({type:'INCREMENT'})
+    
   }
   return (
     <div>
