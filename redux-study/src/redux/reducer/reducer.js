@@ -19,6 +19,8 @@ function reducer(state = initialState, action){
                 id:action.payload.id,
                 password:action.payload.password
             }
+        case 'DECREMENT':
+            return {...state, count:state.count-1}
         default:
             return {...state}
     }
