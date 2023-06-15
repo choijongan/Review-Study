@@ -26,9 +26,8 @@ function App() {
   }
   return (
     <div>
-      <h1>{id},{password}</h1>
+      <h1>{id}{password}</h1>
       <h1>{count}</h1>
-      <h1>{decrement}</h1>
       <button onClick={increase}>증가</button>
       <button onClick={login}>Login</button>
       <button onClick={decrement}>감소!</button>
