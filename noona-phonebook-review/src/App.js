@@ -1,3 +1,4 @@
+import { Col, Container, Row } from 'react-bootstrap';
 import './App.css';
 
 //1. 왼쪽에는 연락처 등록하는 폼, 오른쪽에는 연락처 리스트와 search창
@@ -9,7 +10,16 @@ import './App.css';
 function App() {
   return (
     <div>
-      
+      <h1 className='title'>연락처</h1>
+      <Container>
+        <Row>
+          <Col>
+            <ContactForm />
+          </Col>
+          <Col>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
