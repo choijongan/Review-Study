@@ -1,5 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import './App.css';
+import ContactForm from './component/ContactForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //1. 왼쪽에는 연락처 등록하는 폼, 오른쪽에는 연락처 리스트와 search창
 //2. 리스트에 유저 이름과 전화번호를 추가할 수 있다.
