@@ -19,8 +19,8 @@ function App() {
           <Col>
             <ContactForm />
           </Col>
-            <ContactList />
           <Col>
+            <ContactList />
           </Col>
         </Row>
       </Container>
