@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
-import productReducer from "./reducers/ProductReducer";
+import ProductReducer from "./reducers/ProductReducer";
 
 
-let store = createStore(productReducer, applyMiddleware(thunk))
+let store = createStore(ProductReducer, applyMiddleware(thunk))
 
-export default store
+export default store;
