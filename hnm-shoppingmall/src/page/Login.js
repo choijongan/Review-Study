@@ -14,7 +14,7 @@ const Login = ({setAuthenticate}) => {
   const dispatch = useDispatch()
   const loginUser = (event) =>{
     event.preventDefault();
-    console.log('lgoin user function issue')
+    console.log('login user function issue')
     // setAuthenticate(true);
     dispatch(authenticateAction.login(id,password))
     navigate('/');

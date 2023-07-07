@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const ProductAll = () => {
     // const [productList, setProductList] = useState([]) //UI에 데이터를 보여준다
-    const productList = useSelector(state=>state.productList)
+    const productList = useSelector(state=>state.product.productList)
     const [query, setQuery] = useSearchParams()
     const dispatch = useDispatch() 
     const getProducts = ()=>{ //await은 async를 줘야한다. 
